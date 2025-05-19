@@ -1,36 +1,157 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html> <!-- Så webben vet att det är en HTML5-sida -->
+<html lang="en"> <!-- Vilket språk -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="CSS/style.css">
+    <title>Tyskens Klockor</title> <!-- Vad min titel är-->
+    <link rel="stylesheet" href="CSS/style.css"> <!-- Länka css-->
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Mobil anpassande --> 
 </head>
 <body>
+    <header>
+        <div id="wrapper"> <!-- Wrapper som håller ihop menyn -->
+            <img src="Bilder/Rows.jpeg" alt="Menu" class="menu-icon" onclick="toggleSidebar()"/> <!-- Menyn ikonen som man kan öppna och stänga menyn med-->
+                <div class="sidebar" id="sidebar">
+                <a href="#" onclick="toggleSidebar()">✖</a> <!-- X ska poppa fram om man öppnar upp sido menyn -->
+                <a href="#">Dashboard</a> 
+                <a href="#">Profile</a>
+                <a href="#">Settings</a>    
+                <a href="#">Logout</a>
+            </div>
+             
+            <h1>Montéur</h1> <!-- Huvud rubrik -->
+        </div>
+    </header>
+    <div class="container"> <!-- Håller ihop -->        
+            <div class="slider-outer"> <!-- Yttre delar-->
+                <div class="slider-inner"> <!-- Inre delar -->
+                    <img src="Bilder/Watch2.jpg" alt="Rolex" class="active"> <!--Bild 2 -->
+                    <img src="Bilder/Watch3.jpg" alt="Victorious"> <!--Bild 3-->
+                </div>
+            </div>
+        </div>
 
-    <div id="wrapper">
-        <header>
-            <h1>Löjrom Sverige
-            </h1>
-        </header>
+        <div id="slogan"> <!-- Slogan -->
+            Discover a world of timeless elegance – with us you will find watches that combine classic design with modern precision. Whether you are looking for something stylish for everyday use or an exclusive watch for special occasions, we have something for every taste. Welcome to your new favorite destination for quality watches!   
+        </div>
+
         <nav>
-            <h2>Löjrom – En exklusiv delikatess från Sveriges sjöar</h2>
-            <h3>
-                Löjrom är en delikatess som ofta betraktas som en av de mest exklusiva och eftertraktade smakupplevelserna i svensk gastronomi. 
-                
-                Det är den vackert orangea romen från den lilla fisken löja, som livnär sig i våra norra sjöar, främst i Bottenviken och andra delar av Östersjön. 
-                
-                Denna delikatess är ett måste på många festbord, särskilt under högtider som jul och nyår.</h3>
-        </nav>
-        <aside>
-            <h4>Vad är löjrom?</h4>
-            <h5>Löjrom är den rödorange romen från fisken löja (Coregonus albula). Löjan är en sötvattensfisk som trivs i kalla sjöar och vattendrag i norra Europa.
+            <div class="tab-buttons"> <!-- Meny knappar -->
+                <button class="active" onclick="showTab('rolex', this)">Rolex</button>
+                <button onclick="showTab('piguet', this)">Piguet</button>
+                <button onclick="showTab('patek', this)">Patek</button>
+              </div>
 
-                Löjrom har en unik smakprofil som skiljer sig från annan rom – den är delikat, mild och har en lätt sötaktig ton med en krispig konsistens. 
-               
-               Den mest eftertraktade löjrommen kommer från svenska vikar, särskilt i Norrland där den plockas för hand vid rätt tidpunkt för att bevara sina bästa egenskaper.</h5>
-        </aside>
-        <Footer></Footer>
+              <div id="rolex" class="tab-content active"> <!-- Innehåll i Rolex fliken -->
+                <div class="image-box">
+                   <img src="Bilder/rolex1.jpg" alt="RolexImage1NotLoaded"style="100%" ; height="100%" ; border-radius:25px>
+                   <div class="Price-Check">$3500</div>
+                </div>
+                <div class="image-box">
+                    <img src="Bilder/rolex2.jpg" alt="RolexImageNot2Loaded"style="100%" ; height="100%" ; border-radius:25px>
+                    <div class="Price-Check">$4000</div>
+                </div>
+              </div>
+
+              <div id="piguet" class="tab-content"> <!-- Innehåll i Piguet fliken -->
+                <div class="image-box">
+                    <img src="Bilder/piguet1.jpg" alt="RolexImage3NotLoaded"style="100%" ; height="100%" ; border-radius:25px>
+                    <div class="Price-Check">$9000</div>
+                </div>
+                <div class="image-box">
+                    <img src="Bilder/piguet2.jpg" alt="RolexImage3NotLoaded"style="100%" ; height="100%" ; border-radius:25px> 
+                    <div class="Price-Check">$8500</div>
+                </div>
+              </div>
+
+              <div id="patek" class="tab-content"> <!-- Innehåll i Patek fliken -->
+                <div class="image-box">
+                    <img src="Bilder/Patek1.jpg" alt="RolexImage3NotLoaded"style="100%" ; height="100%" ; border-radius:25px>
+                    <div class="Price-Check">$6500</div>
+                </div>
+                <div class="image-box">
+                    <img src="Bilder/Patek2.jpg" alt="RolexImage3NotLoaded"style="100%" ; height="100%" ; border-radius:25px>
+                    <div class="Price-Check">$6000</div>
+                </div>
+              </div>
+        </nav>
+            <noscript>
+                <style>
+                .menu-icon {
+                    display: none;  
+                }
+
+                .tab-buttons, .tab-content { 
+                    display: none !important;
+                }  /*Väljer att koda i html nu för det blev enklare, detta gäller nära java är stängt av*/
+            
+                .noscript-gallery {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    gap: 35px;
+                    margin: 50px 0;
+                }
+            
+                .noscript-gallery .image-box {
+                    width: 400px;
+                    height: 400px;
+                    background-color: #1e1c1f;
+                    border-radius: 25px;
+                    border: 11px solid rgb(45, 44, 44);
+                }
+            
+                .noscript-gallery .image-box img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 25px;
+                }
+            
+                .noscript-gallery .Price-Check {
+                    background-color: rgb(185, 185, 185);
+                    height: 35px;
+                    width: 100px;
+                    margin: 10px auto;
+                    font-size: xx-large;
+                    color: black;
+                    text-align: center;
+                    line-height: 35px;
+                }
+            </style>
+            
+        <div class="noscript-gallery"> 
+        <div class="image-box"> <!-- Innehåll i Rolex menyn -->
+            <img src="Bilder/rolex1.jpg" alt="Rolex 1">
+        <div class="Price-Check">$3500</div>
     </div>
+    <div class="image-box"> <!-- Innehåll i Rolex menyn -->
+        <img src="Bilder/rolex2.jpg" alt="Rolex 2">
+        <div class="Price-Check">$4000</div>
+    </div>
+    <div class="image-box"> <!-- Innehåll i Piguet menyn -->
+        <img src="Bilder/piguet1.jpg" alt="Piguet 1">
+        <div class="Price-Check">$9000</div>
+    </div>
+    <div class="image-box"> <!-- Innehåll i Piguet menyn -->
+        <img src="Bilder/piguet2.jpg" alt="Piguet 2">
+        <div class="Price-Check">$8500</div>
+    </div>
+    <div class="image-box"> <!-- Innehåll i Patek menyn -->
+        <img src="Bilder/Patek1.jpg" alt="Patek 1">
+        <div class="Price-Check">$6500</div>
+    </div>
+    <div class="image-box"> <!-- Innehåll i Patek menyn -->
+        <img src="Bilder/Patek2.jpg" alt="Patek 2">
+        <div class="Price-Check">$6000</div>
+    </div>
+</div>
+</noscript>
+
+
+<footer></footer>
+    <script src="https://code.jquery.com/jquery-3.1.1.js"
+    integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+    crossorigin="anonymous"></script>
+    <script src="JS/main.js"></script>
 </body>
 </html>

@@ -1,58 +1,251 @@
-body{
-    height: 1920px;
-    width: 100vw;
+body {
+    color: #ffffff;
 }
 
 #wrapper {
-    height: 100vh; 
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 25% 25% 30% 20%;
-    grid-template-areas: 
-        "he he"
-        ". na"
-        ". as"
-        "fo fo";
+    display: flex;
+    align-items: center;
+    padding: 5px 40px; 
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 5px 10px rgba(0,0,0,5.5);
+    border-radius: 5px;
 }
 
-header {
-    grid-area: he;
-    background-image: url(../images/Fish.jpg);
-    background-size: cover;
-    background-position: center;
+#wrapper img {
+    width: 60px;
+    height: auto;
 }
 
-nav{
-    grid-area: na;
-    background-color: whitesmoke;
+h1 {
+    font-weight: 600;
+    margin-left: 34%;
+    color: #000000;
+    border-bottom: 3px solid #000000;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size:xx-large;
 }
-aside{
-    grid-area: as;
-    background-color: whitesmoke;
+
+.container {
+    margin-top: 2%;
+    padding: 50px 20px;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(38, 38, 38);
+    border-radius: 50px;
 }
-footer{
-    background-color: grey;
-    grid-area: fo;
+
+.slider-outer {
+    width: 90%;
+    max-width: 1200px;
+    height: 400px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-h1{
-    margin-left: 460px;
-    margin-top: 50px;
-    color: aliceblue;
-    font-size: 50px
+
+.slider-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
 }
-h2{
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 20px;
+
+.slider-inner img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 1;
+    transition: opacity 4s ease-in-out; 
+    z-index: 1;
 }
-h3{
-    font-size: 15px;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+
+#slogan{
+    color: rgb(0, 0, 0);
+    font-size: large;
+    margin-left: 14%;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    margin-right: 14%;
+    margin-top: 3%;
+    margin-bottom: 3%   ;
+
 }
-h4{
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 20px;
+
+.tab-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
 }
-h5{
-    font-size: 15px;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  
+.tab-buttons button {
+    margin-top: 25px;
+    background: none;
+    border: none;
+    padding: 15px 150px;
+    font-size: 25px;
+    cursor: pointer;
+    color: #000000;
+}
+  
+.tab-buttons button.active {
+    color: #0079C7;
+    border-bottom: 3px solid #0079C7;
+}
+  
+.tab-content {
+    display: none;
+    justify-content: center;
+    gap: 100px;
+    flex-wrap: wrap;
+}
+  
+.tab-content.active {
+    display: flex;
+}
+  
+.image-box {
+    width: 400px;
+    height: 400px;
+    background-color: #1e1c1f;
+    border-radius: 25px;
+    border: 11px solid rgb(78, 78, 78);
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    }
+    
+.menu-icon {
+    width: 40px;
+    height: 40px;
+    margin: 16px;
+    cursor: pointer;
+}
+    
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    background-color: #fff;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    padding: 20px;
+}
+    
+.sidebar.active {
+    transform: translateX(0);
+}
+    
+.sidebar a {
+    display: block;
+    padding: 12px 0;
+    color: #333;
+    text-decoration: none;
+}
+    
+.sidebar a:hover {
+    color: #007bff;
+}
+    
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    display: none;
+    z-index: 999;
+}
+    
+.overlay.active {
+    display: block;
+}
+
+.Price-Check{
+    background-color: rgb(185, 185, 185);
+    height: 35px;
+    width: 100px;
+    margin-left: 36%;
+    font-size: xx-large;
+    color: black;
+}
+
+
+@media screen and (max-width: 768px) {
+    body{
+        width: 80%;
+    }
+
+    .container {
+        margin-top: 2%;
+        padding: 15px 20px;
+        display: flex;
+        justify-content: center;
+        background-color: rgb(38, 38, 38);
+        border-radius: 30px;
+        width: 85%;
+    }
+
+    h1 {
+        margin-left: 0;
+        font-size: 1.5rem;
+        border: none;
+    }
+
+    #wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .tab-buttons button {
+        padding: 20px 20px;
+        font-size: 15px;
+
+    }
+
+    .slider-outer {
+        height: 100px;
+    }
+
+    .image-box {
+        width: 120px;
+        height: 120px;
+        background-color: #1e1c1f;
+        border-radius: 25px;
+        border: 11px solid rgb(255, 255, 255);
+    }
+
+
+    .Price-Check {
+        font-size: medium;
+    }
+
+    #slogan {
+        margin: 20px;
+        font-size: medium;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .tab-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tab-buttons button {
+        width: 80%;
+        margin-bottom: 10px;
+    }
 }
