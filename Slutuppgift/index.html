@@ -1,189 +1,180 @@
-<!DOCTYPE html> <!-- Så webben vet att det är en HTML5-sida -->
-<html lang="en"> <!-- Vilket språk -->
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Tyskens Klockor</title> <!-- Vad min titel är-->
-    <link rel="stylesheet" href="CSS/style.css"> <!-- Länka css-->
-    <meta charset="UTF-8"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Mobil anpassande --> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tyskens Klockor</title>
+    <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
     <header>
-        <div id="wrapper"> <!-- Wrapper som håller ihop menyn -->
-            <img src="Bilder/Rows.jpeg" alt="Menu" class="menu-icon" onclick="toggleSidebar()"/> <!-- Menyn ikonen som man kan öppna och stänga menyn med-->
-                <div class="sidebar" id="sidebar">
-                <a href="#" onclick="toggleSidebar()">✖</a> <!-- X ska poppa fram om man öppnar upp sido menyn -->
-                <a href="#">Dashboard</a> 
-                <a href="#">Profile</a>
-                <a href="#">Settings</a>    
-                <a href="#">Logout</a>
+        <div id="wrapper">
+            <img src="Bilder/Rows.jpeg" alt="Menu" class="menu-icon" onclick="toggleSidebar()">
+            <div class="sidebar" id="sidebar">
+            <span onclick="toggleSidebar()">✖</span>
+            <a href="#">Dashboard</a>
+            <a href="#">Profile</a>
+            <a href="#">Settings</a>
+            <a href="#">Logout</a>
             </div>
-             
-            <h1>Montéur</h1> <!-- Huvud rubrik -->
+            <h1>Montéur</h1>
         </div>
     </header>
-    <div class="container"> <!-- Håller ihop -->        
-            <div class="slider-outer"> <!-- Yttre delar-->
-                <div class="slider-inner"> <!-- Inre delar -->
-                    <img src="Bilder/Watch2.jpg" alt="Rolex" class="active"> <!--Bild 2 -->
-                    <img src="Bilder/Watch3.jpg" alt="Victorious"> <!--Bild 3-->
-                </div>
+
+    <div class="container">
+        <div class="slider-outer">
+            <div class="slider-inner">
+                <img src="Bilder/Watch2.jpg" alt="Rolex" class="active">
+                <img src="Bilder/Watch3.jpg" alt="Victorious">
+            </div>
+        </div>
+    </div>
+
+    <div id="slogan">
+        Discover a world of timeless elegance – with us you will find watches that combine classic design with modern precision. Whether you are looking for something stylish for everyday use or an exclusive watch for special occasions, we have something for every taste. Welcome to your new favorite destination for quality watches!
+    </div>
+
+    <nav>
+        <div class="tab-buttons">
+            <button class="active" onclick="showTab('rolex', this)">Rolex</button>
+            <button onclick="showTab('piguet', this)">Piguet</button>
+            <button onclick="showTab('patek', this)">Patek</button>
+        </div>
+
+        <div id="rolex" class="tab-content active">
+            <div class="image-box">
+
+                <img src="Bilder/rolex1.jpg" alt="Rolex 1" style="width:100%; height:100%; border-radius:25px;">
+                <div class="Price-Check">$3500</div>
+            
+            </div>
+            
+            <div class="image-box">
+
+                <img src="Bilder/rolex2.jpg" alt="Rolex 2" style="width:100%; height:100%; border-radius:25px;">
+                <div class="Price-Check">$4000</div>
+
             </div>
         </div>
 
-        <div id="slogan"> <!-- Slogan -->
-            Discover a world of timeless elegance – with us you will find watches that combine classic design with modern precision. Whether you are looking for something stylish for everyday use or an exclusive watch for special occasions, we have something for every taste. Welcome to your new favorite destination for quality watches!   
+        <div id="piguet" class="tab-content">
+            <div class="image-box">
+
+                <img src="Bilder/piguet1.jpg" alt="Piguet 1" style="width:100%; height:100%; border-radius:25px;">
+                <div class="Price-Check">$9000</div>
+
+            </div>
+
+            <div class="image-box">
+                <img src="Bilder/piguet2.jpg" alt="Piguet 2" style="width:100%; height:100%; border-radius:25px;">
+                <div class="Price-Check">$8500</div>
+
+            </div>
         </div>
-
-        <nav>
-            <div class="tab-buttons"> <!-- Meny knappar -->
-                <button class="active" onclick="showTab('rolex', this)">Rolex</button>
-                <button onclick="showTab('piguet', this)">Piguet</button>
-                <button onclick="showTab('patek', this)">Patek</button>
-              </div>
-
-              <div id="rolex" class="tab-content active"> <!-- Innehåll i Rolex fliken -->
+            <div id="patek" class="tab-content">
                 <div class="image-box">
-                   <img src="Bilder/rolex1.jpg" alt="RolexImage1NotLoaded"style="100%" ; height="100%" ; border-radius:25px>
-                   <div class="Price-Check">$3500</div>
-                </div>
-                <div class="image-box">
-                    <img src="Bilder/rolex2.jpg" alt="RolexImageNot2Loaded"style="100%" ; height="100%" ; border-radius:25px>
-                    <div class="Price-Check">$4000</div>
-                </div>
-              </div>
-
-              <div id="piguet" class="tab-content"> <!-- Innehåll i Piguet fliken -->
-                <div class="image-box">
-                    <img src="Bilder/piguet1.jpg" alt="RolexImage3NotLoaded"style="100%" ; height="100%" ; border-radius:25px>
-                    <div class="Price-Check">$9000</div>
-                </div>
-                <div class="image-box">
-                    <img src="Bilder/piguet2.jpg" alt="RolexImage3NotLoaded"style="100%" ; height="100%" ; border-radius:25px> 
-                    <div class="Price-Check">$8500</div>
-                </div>
-              </div>
-
-              <div id="patek" class="tab-content"> <!-- Innehåll i Patek fliken -->
-                <div class="image-box">
-                    <img src="Bilder/Patek1.jpg" alt="RolexImage3NotLoaded"style="100%" ; height="100%" ; border-radius:25px>
+                    <img src="Bilder/Patek1.jpg" alt="Patek 1" style="width:100%; height:100%; border-radius:25px;">
                     <div class="Price-Check">$6500</div>
                 </div>
                 <div class="image-box">
-                    <img src="Bilder/Patek2.jpg" alt="RolexImage3NotLoaded"style="100%" ; height="100%" ; border-radius:25px>
+                    <img src="Bilder/Patek2.jpg" alt="Patek 2" style="width:100%; height:100%; border-radius:25px;">
                     <div class="Price-Check">$6000</div>
-                </div>
-              </div>
-        </nav>
-            <noscript>
-                <style>
-                .menu-icon {
-                    display: none;  
-                }
+            </div>
+        </div>
+    </nav>
 
-                .tab-buttons, .tab-content { 
-                    display: none !important;
-                }  /*Väljer att koda i html nu för det blev enklare, detta gäller nära java är stängt av*/
-            
-                .noscript-gallery {
-                    display: flex;
-                    flex-wrap: wrap;
-                    justify-content: center;
-                    gap: 35px;
-                    margin: 50px 0;
-                }
-            
-                .noscript-gallery .image-box {
-                    width: 400px;
-                    height: 400px;
-                    background-color: #1e1c1f;
-                    border-radius: 25px;
-                    border: 11px solid rgb(45, 44, 44);
-                }
-            
-                .noscript-gallery .image-box img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    border-radius: 25px;
-                }
-            
-                .noscript-gallery .Price-Check {
-                    background-color: rgb(185, 185, 185);
-                    height: 35px;
-                    width: 100px;
-                    margin: 10px auto;
-                    font-size: xx-large;
-                    color: black;
-                    text-align: center;
-                    line-height: 35px;
-                }
-            </style>
-            
-        <div class="noscript-gallery"> 
-        <div class="image-box"> <!-- Innehåll i Rolex menyn -->
-            <img src="Bilder/rolex1.jpg" alt="Rolex 1">
-        <div class="Price-Check">$3500</div>
-    </div>
-    <div class="image-box"> <!-- Innehåll i Rolex menyn -->
-        <img src="Bilder/rolex2.jpg" alt="Rolex 2">
-        <div class="Price-Check">$4000</div>
-    </div>
-    <div class="image-box"> <!-- Innehåll i Piguet menyn -->
-        <img src="Bilder/piguet1.jpg" alt="Piguet 1">
-        <div class="Price-Check">$9000</div>
-    </div>
-    <div class="image-box"> <!-- Innehåll i Piguet menyn -->
-        <img src="Bilder/piguet2.jpg" alt="Piguet 2">
-        <div class="Price-Check">$8500</div>
-    </div>
-    <div class="image-box"> <!-- Innehåll i Patek menyn -->
-        <img src="Bilder/Patek1.jpg" alt="Patek 1">
-        <div class="Price-Check">$6500</div>
-    </div>
-    <div class="image-box"> <!-- Innehåll i Patek menyn -->
-        <img src="Bilder/Patek2.jpg" alt="Patek 2">
-        <div class="Price-Check">$6000</div>
-    </div>
-</div>
-</noscript>
+    <noscript>
+        <style>
+            .menu-icon, .tab-buttons, .tab-content {
+                display: none !important;
+            }
+            .noscript-gallery {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 35px;
+                margin: 50px 0;
+            }
+            .noscript-gallery .image-box {
+                width: 400px;
+                height: 400px;
+                background-color: #1e1c1f;
+                border-radius: 25px;
+                border: 11px solid rgb(45, 44, 44);
+            }
+            .noscript-gallery .image-box img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 25px;
+            }
+            .noscript-gallery .Price-Check {
+                background-color: rgb(185, 185, 185);
+                height: 35px;
+                width: 100px;
+                margin: 10px auto;
+                font-size: xx-large;
+                color: black;
+                text-align: center;
+                line-height: 35px;
+            }
+        </style>
 
+        <div class="noscript-gallery">
 
-<footer>
-            <div class="Botton-Cotainer">
-                <h4>Abut us</h4>
+            <div class="image-box"><img src="Bilder/rolex1.jpg" alt="rolex 1">
+                <div class="Price-Check">$3500</div></div>
+
+            <div class="image-box"><img src="Bilder/rolex2.jpg" alt="rolex 2">
+                <div class="Price-Check">$4000</div></div>
+
+            <div class="image-box"><img src="Bilder/piguet1.jpg" alt="piguet 1">
+                <div class="Price-Check">$9000</div></div>
+
+            <div class="image-box"><img src="Bilder/piguet2.jpg" alt="piguet 2">
+                <div class="Price-Check">$8500</div></div>
+
+            <div class="image-box"><img src="Bilder/Patek1.jpg" alt="patek 1">
+                <div class="Price-Check">$6500</div></div>
+
+            <div class="image-box"><img src="Bilder/Patek2.jpg" alt="patek 2">
+                <div class="Price-Check">$6000</div></div>
+
+        </div>
+    </noscript>
+
+    <footer>
+        <div class="Bottom-Container">
+            <div class="Bottom-Section">
+                <h4>About us</h4>
                 <ul>
                     <li><a href="#">History</a></li>
                     <li><a href="#">Our Team</a></li>
                 </ul>
             </div>
-
-            <div class="Botton-Section">
+            <div class="Bottom-Section">
                 <h4>Contact</h4>
                 <ul>
-                    <li><a href="mailto:info@exempel.se">Help@Montéur.com</a></li>
-                    <li><a href="#">Telefon: 073-0784034</a></li>
+                    <li><a href="mailto:help@monteur.com">Help@Monteur.com</a></li>
+                    <li><a href="#">Phone: 073-0784034</a></li>
                     <li><a href="#">Find us</a></li>
                 </ul>
             </div>
-
-            <div class="Botton-Section">
+            <div class="Bottom-Section">
                 <h4>Follow</h4>
-                <img src="Bilder/stylesheet.png" alt="Länk logos">
+                <img src="Bilder/stylesheet.png" alt="Social media logos">
                 <ul>
-                    <li><a href="#">Faceboob</a></li>
+                    <li><a href="#">Facebook</a></li>
                     <li><a href="#">Twitter</a></li>
                     <li><a href="#">Instagram</a></li>
-
                 </ul>
             </div>
-                </form>
-            </div>
         </div>
-        </div> 
-</footer>
+    </footer>
+
     <script src="https://code.jquery.com/jquery-3.1.1.js"
-    integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
-    crossorigin="anonymous"></script>
+        integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+        crossorigin="anonymous"></script>
     <script src="JS/main.js"></script>
 </body>
 </html>
